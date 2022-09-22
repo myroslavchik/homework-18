@@ -38,33 +38,33 @@ let products = [
 }
 ];
 
-// function productsList (array) {
-//     let sortedProducts = array.sort(function (a, b) {
-//         if (a.bought > b.bought) {
-//             return 1;
-//         }
-//         if (a.bought < b.bought) {
-//             return -1;
-//         }
-//         if (a.bought === b.bought) {
-//             return 0;
-//         }
-//     })
-//     return sortedProducts;
-// }
+function productsList (array) {
+    let sortedProducts = array.sort(function (a, b) {
+        if (a.bought > b.bought) {
+            return 1;
+        }
+        if (a.bought < b.bought) {
+            return -1;
+        }
+        if (a.bought === b.bought) {
+            return 0;
+        }
+    })
+    return sortedProducts;
+}
 
 
-// console.log(productsList(products));
+console.log(productsList(products));
 
 
-// function buyProduct(value) {
-// objIndex = products.findIndex((obj => obj.name == value));
-// products[objIndex].bought = 'yes';
-// }
+function buyProduct(value) {
+objIndex = products.findIndex((obj => obj.name == value));
+products[objIndex].bought = 'yes';
+}
 
-// buyProduct('bread');
+buyProduct('bread');
 
-// console.log(productsList(products));
+console.log(productsList(products));
 
 
 
@@ -79,33 +79,33 @@ let products = [
 // то сума буде 24.
 
 
-// function deleteProduct(value) {
-//     newProducts = products.filter((obj => obj.name != value));
-// }
+function deleteProduct(value) {
+    newProducts = products.filter((obj => obj.name != value));
+}
 
-// deleteProduct('bread');
-// console.log(newProducts);
+deleteProduct('bread');
+console.log(newProducts);
 
-///
 
-// let egg = {
-//     name: 'egg',
-//     quantity: 80,
-//     bought: 'yes',
-//     price: 4,
-//     sum: 40
-// };
 
-// function addProduct(value) {
-//     let obj = products.find(e => e.name === value);
-//     if (value === obj.name) {
-//     obj.quantity += egg.quantity;
-//     obj.sum = obj.price * obj.quantity;
-//     }
-// }
+let egg = {
+    name: 'egg',
+    quantity: 80,
+    bought: 'yes',
+    price: 4,
+    sum: 40
+};
 
-// addProduct('egg');
-// console.log(products);
+function addProduct(value) {
+    let obj = products.find(e => e.name === value);
+    if (value === obj.name) {
+    obj.quantity += egg.quantity;
+    obj.sum = obj.price * obj.quantity;
+    }
+}
+
+addProduct('egg');
+console.log(products);
 
 // Підрахунок суми всіх продуктів (враховуючи кількість кожного) в списку.
 // Підрахунок суми всіх (не) придбаних продуктів.
@@ -114,41 +114,41 @@ let products = [
 // в залежності від параметра функції, який вона приймає)
 
 
-// function sumProducts (array) {
-// let counter = 0;
-// for (let i = 0; i < array.length; i++) {
-//   if (array[i].quantity > 0) {
-//     counter += array[i].quantity * array[i].price;
-//   } 
-// } return counter;
-// }
+function sumProducts (array) {
+let counter = 0;
+for (let i = 0; i < array.length; i++) {
+  if (array[i].quantity > 0) {
+    counter += array[i].quantity * array[i].price;
+  } 
+} return counter;
+}
 
-// console.log(sumProducts(products));
+console.log(sumProducts(products));
 
 
-// function sumNotBuyProducts (array) {
-// let counter = 0;
-// for (let i = 0; i < array.length; i++) {
-//   if (array[i].bought === 'no') {
-//     counter += array[i].quantity * array[i].price;
-//   } 
-// } return counter;
-// }
+function sumNotBuyProducts (array) {
+let counter = 0;
+for (let i = 0; i < array.length; i++) {
+  if (array[i].bought === 'no') {
+    counter += array[i].quantity * array[i].price;
+  } 
+} return counter;
+}
 
-// console.log(sumNotBuyProducts(products));
+console.log(sumNotBuyProducts(products));
 
-// let min = 0;
-// let max = 1;
-// function productsList (array, b) {
-//     if (b === min) {
-//     let sortedOne = array.sort(function(a, b){return a.sum - b.sum})
-//     return sortedOne;
-//     }
-//     if (b === max) {
-//     let sortedTwo = array.sort(function(a, b){return b.sum - a.sum})
-//     return sortedTwo;
-//     }
-// }
+let min = 0;
+let max = 1;
+function productsList (array, b) {
+    if (b === min) {
+    let sortedOne = array.sort(function(a, b){return a.sum - b.sum})
+    return sortedOne;
+    }
+    if (b === max) {
+    let sortedTwo = array.sort(function(a, b){return b.sum - a.sum})
+    return sortedTwo;
+    }
+}
 
-// console.log(productsList(products, min));
+console.log(productsList(products, min));
 
