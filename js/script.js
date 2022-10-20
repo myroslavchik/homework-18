@@ -86,25 +86,49 @@ function deleteProduct(value) {
 deleteProduct('bread');
 console.log(newProducts);
 
-
-
-let egg = {
-    name: 'egg',
+let newobject1 = {
+    name: 'newproduct',
     quantity: 80,
     bought: 'yes',
     price: 4,
     sum: 40
 };
 
+let newobject2 = {
+    name: 'cheese',
+    quantity: 3,
+    bought: 'no',
+    price: 200,
+    sum: 600,
+};
+
+let newobject3 = {
+    name: 'cheese',
+    quantity: 3,
+    bought: 'yes',
+    price: 300,
+    sum: 600,
+};
+
+
 function addProduct(value) {
-    let obj = products.find(e => e.name === value);
-    if (value === obj.name) {
-    obj.quantity += egg.quantity;
-    obj.sum = obj.price * obj.quantity;
+		let obj = products.find(e => e.name);
+    if (value.name != obj.name) {
+    		products.push(value);
+    }
+    if (value.name == obj.name && value.price == obj.price) {
+    		obj.quantity += value.quantity;
+        obj.sum = obj.quantity * obj.price;
+        obj.bought = 'yes';
+    }
+    if (value.name == obj.name && value.price != obj.price) {
+    		products.push(value);
     }
 }
 
-addProduct('egg');
+addProduct(newobject1);
+addProduct(newobject2);
+addProduct(newobject3);
 console.log(products);
 
 // Підрахунок суми всіх продуктів (враховуючи кількість кожного) в списку.
@@ -139,7 +163,8 @@ console.log(sumNotBuyProducts(products));
 
 let min = 0;
 let max = 1;
-function productsList (array, b) {
+
+function productsListSum (array, b) {
     if (b === min) {
     let sortedOne = array.sort(function(a, b){return a.sum - b.sum})
     return sortedOne;
@@ -150,5 +175,5 @@ function productsList (array, b) {
     }
 }
 
-console.log(productsList(products, min));
+console.log(productsListSum(products, min));
 
